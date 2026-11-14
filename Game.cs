@@ -1,8 +1,25 @@
 public class Game {
-    public string Name;
+    private string _name = "Без названия";
+    public string Name
+    {
+        get {
+            return _name;
+        }
+
+        private set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                _name = "Без названия";
+                return;
+            }
+
+            _name = value.Trim();
+        }
+    }
     public string Genre;
     public int Release_date { get; private set; }
-    public int Rating;
+    public int Rating { get; private set; }
 
     public Game(string name, string genre, int release_date)
     {

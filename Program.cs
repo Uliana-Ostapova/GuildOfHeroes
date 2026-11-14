@@ -70,3 +70,21 @@ Console.WriteLine($"Год выхода sky после недопустимог�
 Game cod = new Game("Call of Duty", "Shooter", 1800);
 Console.WriteLine($"Создание с неверным годом выхода: {cod.Release_date}");
 Console.WriteLine($"Год выхода Detroit: Become Human без изменений: {detroit.Release_date}");
+
+Game bioshock = new Game("   BioShock   ", "Shooter", 2007);
+Game noName = new Game("   ", "Adventure", 1800);
+
+Console.WriteLine($"Первая игра: {bioshock.Name}, {bioshock.Release_date}, рейтинг {bioshock.Rating}");
+Console.WriteLine($"Вторая игра: {noName.Name}, {noName.Release_date}, рейтинг {noName.Rating}");
+
+bioshock.ChangeRating(7);
+Console.WriteLine($"Обычное изменение рейтинга: {bioshock.Rating}");
+bioshock.ChangeRating(1);
+Console.WriteLine($"Граничное изменение рейтинга: {bioshock.Rating}");
+bioshock.ChangeRating(11);
+Console.WriteLine($"Некорректное изменение рейтинга: {bioshock.Rating}");
+
+bioshock.ChangeReleaseDate(1970);
+Console.WriteLine($"Граничное изменение года: {bioshock.Release_date}");
+bioshock.ChangeReleaseDate(1969);
+Console.WriteLine($"Некорректное изменение года: {bioshock.Release_date}");
