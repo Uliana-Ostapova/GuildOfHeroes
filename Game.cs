@@ -44,7 +44,7 @@ public class Game {
 
         Rating = newRating;
     }
-    
+
     public void ChangeReleaseDate(int newYear)
     {
         if (newYear < 1970)
@@ -53,5 +53,13 @@ public class Game {
         }
 
         Release_date = newYear;
+    }
+
+    public string GetInfo()
+    {
+        return $">>> {Name} <<<\n" +
+            $"Жанр: {Genre}\n" +
+            $"Год выхода: {Release_date}\n" +
+            $"Рейтинг: {Rating}";
     }
 }
